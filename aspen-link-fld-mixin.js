@@ -79,12 +79,13 @@ export const AspenLinkFldMixin = superclass =>
           ["miRNA", "https://www.mirbase.org/cgi-bin/query.pl?terms="],
           ["trial", "https://www.clinicaltrials.gov/show/"],
           ["twitter", "https://www.twitter.com/"],
-          ["facebook", ""],
           [
             "linkedin-search",
             "https://www.linkedin.com/search/results/all?origin=GLOBAL_SEARCH_HEADER&keywords="
           ],
           ["google-finance", "https://google.com/finance?q="],
+          ["pitchbook", "https://pitchbook.com/profiles/search?q="],
+          ["crunchbase", ""],
           ["google-map", "https://maps.google.com/maps/search/"],
           ["phone", "tel:"],
           ["mail", "mailto:"],
@@ -95,11 +96,8 @@ export const AspenLinkFldMixin = superclass =>
 
         let _id =
           linktype == "indeed" || linktype == "trial-search" ? `"${id}"` : id;
-        url = `${linkMap.get(linktype)}${_id}`;
 
-        if (linktype === "facebook") {
-          url = this.value;
-        }
+        url = `${linkMap.get(linktype)}${_id}`;
       }
 
       return url;
